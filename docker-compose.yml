@@ -8,18 +8,9 @@ services:
     volumes:
       - ./:/app
       - ./site.conf:/etc/nginx/conf.d/default.conf
-    networks:
-      - kobol-network
 
   php:
     build:
       context: ./
-    networks:
-      - kobol-network
     volumes:
       - ./:/app
-
-networks:
-  kobol-network:
-    external:
-      name: kobol-network
